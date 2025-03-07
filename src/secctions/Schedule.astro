@@ -1,0 +1,280 @@
+---
+import Summary from "@/components/Summary.astro";
+
+export const summariesFirstMonth = [
+  {
+    title: "Semana 1",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría respiración: respiración abdominal-invertida-profunda- porque inhalamos y exhalamos por la nariz-sistema nervioso 1",
+          "Ejercicio: Respiración atenta",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Hay siempre un espacio de 10 minutos al inicio de la sesión para resolver dudas",
+          "Movimiento articular y respiración",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Siempre antes de la relajación realizamos suaves movimientos para soltar un poco el cuerpo",
+          "Relajación para soltar y fluir. Calma cuerpo y mente",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Semana 2",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría respiración: sistema nervioso 2",
+          "Ejercicio: Respiración alterna",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Eliminar tensiones",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Paz interior. Atención plena",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Semana 3",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría: Las bases de flexibilidad",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Conecta con tu flexibilidad",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Suelta y libera toda tensión",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Semana 4",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría: Gestión de las emociones",
+          "Ejercicio: Lugar Seguro",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Para el dolor de espalda",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Escanea todo tu cuerpo y suelta a través de la respiración",
+        ],
+      },
+    ],
+  },
+];
+
+export const summariesSecondMonth = [
+  {
+    title: "Semana 5",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría: Saludos al sol",
+          "Ejercicio: Práctica saludos al sol",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Para las mañanas. Comienza el día con energía",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Relajación sanadora. Renueva cada célula de tu cuerpo.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Semana 6",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría: Meditación + beneficios",
+          "Ejercicio: meditación 40 respiraciones",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Para dormir bien",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Relax total. Relaja cuerpo, mente y emociones",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Semana 7",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría: Clase de Yoga para cuando tenemos poco tiempo 1",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Para liberar el estrés y la ansiedad",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Duerme profundamente sin ansiedad.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Semana 8",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Clase: Clase de Yoga para cuando tenemos poco tiempo 2",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Para balancear energéticamente",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Relajación para un sueño y descanso profundo.",
+        ],
+      },
+    ],
+  },
+];
+
+---
+
+<section id='schedule' class='w-full py-20 bg-gray-50'>
+  <div class='max-w-7xl mx-auto px-6'>
+    <h2 class='text-4xl md:text-5xl font-bold text-center mb-12'>
+      Cronograma del Programa
+    </h2>
+
+    <div class='grid md:grid-cols-2 gap-8 lg:gap-12'> 
+      <!-- Primeras 4 Clases -->
+    
+      <div class='bg-white p-8 rounded-lg shadow-sm'>
+        <div class='space-y-4'>
+          <!-- Componente Dropdown para cada semana -->
+          {summariesFirstMonth.map(({ title, content }) => (
+          <Summary title={title}>
+            <!-- Aquí generamos la lista con la info de cada semana -->
+            <div class="space-y-4">
+              {content.map(({ label, bullets }) => (
+                <div>
+                  <p class="font-semibold ">{label}</p>
+                  <ul class="list-disc list-inside ml-4 space-y-1">
+                    {bullets.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </Summary>
+        ))}
+        </div>
+      </div>
+
+      <!-- Últimas 4 Clases -->
+      <div class='bg-white p-8 rounded-lg shadow-sm'>
+        <div class='space-y-4'>
+          {summariesSecondMonth.map(({ title, content }) => (
+          <Summary title={title}>
+            <!-- Aquí generamos la lista con la info de cada semana -->
+            <div class="space-y-4">
+              {content.map(({ label, bullets }) => (
+                <div>
+                  <p class="font-semibold ">{label}</p>
+                  <ul class="list-disc list-inside ml-4 space-y-1">
+                    {bullets.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </Summary>
+        ))}
+        </div>
+      </div>
+    </div>
+
+    
+    <div class='mt-12 text-center'>
+      <a href='' target='_blank'>
+        <button
+          class='px-8 py-3 bg-rose-400 text-white rounded-full hover:bg-rose-500 transition-colors cursor-pointer'
+        >
+          Reserva tu plaza
+        </button>
+      </a>
+      <p class='text-gray-600 m-6'>
+        ¿Tienes dudas sobre el programa? ¡Contáctanos para más información!
+      </p>
+      <a href='https://wa.me/34658475845' target='_blank'>
+        <button
+          class='px-8 py-3 bg-rose-400 text-white rounded-full hover:bg-rose-500 transition-colors cursor-pointer'
+        >
+          Contactar
+        </button>
+      </a>
+    </div>
+  </div>
+</section>

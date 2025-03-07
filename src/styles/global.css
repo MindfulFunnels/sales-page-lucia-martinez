@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #C66271; 
+  --color-secondary: #7A5C3C;
+  --color-background: #F2F2F2;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.animate-typewriter {
+  font-family: monospace;             /* Asegura que cada carácter ocupa el mismo ancho */
+  display: inline-block;              /* Permite animar el ancho */
+  white-space: nowrap;                /* Evita que el texto se envuelva */
+  overflow: hidden;                   /* Oculta el contenido que excede el ancho animado */
+  border-right: .10em solid rgb(54, 54, 54);   /* Simula el cursor de la máquina de escribir */
+  animation: 
+    typing 4s steps(34, end) forwards,  /* Ajusta 34 al número total de caracteres */
+    blink-caret .75s step-end infinite;
+}
+
+/* Animación de escritura */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 36ch; }   /* Cambia 34 por la cantidad exacta de caracteres de tu texto */
+}
+
+/* Animación del cursor parpadeante */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: rgb(192, 192, 192); }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+
