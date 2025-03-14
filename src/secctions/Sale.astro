@@ -17,7 +17,7 @@
         Cuídate Ahora
       </h1>
     </div>
-    <div class='grid md:grid-cols-1 lg:grid-cols-2 gap-8'>
+    <div class='grid md:grid-cols-1 lg:grid-cols-2 gap-8 mb-6'>
       <!-- Beneficios -->
       <div class='bg-white p-8 rounded-lg shadow-sm'>
         <h3 class='text-2xl font-semibold mb-4'>Beneficios del curso</h3>
@@ -218,9 +218,9 @@
     <a
       href='https://wa.me/34658475845'
       target='_blank'
-      class='my-2 enlace shadow text-white py-2 rounded-full hover:bg-rose-400 transition-colors cursor-pointer p-4'
+      class='px-10 text-white py-2 rounded-full bg-rose-400 transition-colors cursor-pointer'
     >
-      ❓ <span class='texto px-2'>¿tenes dudas? contactanos</span>
+      ❓ ¿tenes dudas? Contáctanos
     </a>
   </div>
 </section>
@@ -229,30 +229,5 @@
   .double-letter {
     /* Ajusta el desplazamiento, el desenfoque y el color según el efecto que busques */
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Botón contenedor con ancho inicial y transición */
-  .enlace {
-    display: inline-flex; /* Uso flex para alinear el ícono y el texto */
-    align-items: center;
-    overflow: hidden; /* Oculta el contenido que se salga del ancho */
-    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-    width: 3rem;
-    /* Ancho inicial para mostrar solo el ícono */
-    transition: width 0.3s ease; /* Transición suave del ancho */
-  }
-  /* Al hacer hover, se expande el ancho */
-  .enlace:hover {
-    width: 20rem; /* Ajustá este valor según el largo del texto */
-  }
-  /* El texto con opacidad para efecto fade in */
-  .enlace .texto {
-    opacity: 0;
-    margin-left: 0.5rem;
-    transition: opacity 0.3s ease;
-  }
-  /* Al hacer hover, el texto se vuelve visible */
-  .enlace:hover .texto {
-    opacity: 1;
   }
 </style>
