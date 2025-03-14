@@ -1,0 +1,70 @@
+<section
+  id='pricing'
+  class='w-full py-20 bg-gray-50 items-center flex flex-col'
+>
+  <div
+    class='max-w-7xl mx-auto px-6 text-center items-center flex flex-col gap-6'
+  >
+    <!-- Precio y CTA -->
+
+    <h3
+      class='special text-5xl font-bold mb-4 flex flex-row items-center justify-center gap-2'
+    >
+      <img src='/alert.gif' alt='' class='size-12' />Precio especial<img
+        src='/alert.gif'
+        alt=''
+        class='size-12'
+      />
+    </h3>
+    <div class='flex gap-2 text-center justify-center items-center'>
+      <p class='lg:text-9xl text-7xl font-bold text-rose-500 mb-2'>127€</p>
+      <p
+        class='text-gray-500 font-bold lg:text-7xl text-5xl line-through rotate-12'
+      >
+        187€
+      </p>
+    </div>
+    <div>
+      <p class='text-gray-600 mb-3 text-2xl font-bold animate-bounce underline'>
+        ¡Plazas limitadas!
+      </p>
+      <p class='mb-3 text-2xl text-black underline p-2'>
+        Oferta válida hasta el jueves 27 de marzo
+      </p>
+    </div>
+    <a
+      onclick='return false;'
+      href='https://pay.hotmart.com/R98635516G?checkoutMode=2'
+      class='hotmart-fb animate-float'
+      ><button
+        class='py-6 lg:px-24 px-16 bg-rose-400 text-white rounded-full hover:bg-rose-500 transition-colors cursor-pointer text-2xl font-bold'
+      >
+        Reserva tu plaza
+      </button></a
+    >
+    <div>
+      <img src='/stack.png' alt='' class='' />
+    </div>
+  </div>
+</section>
+<script type='text/javascript'>
+  function importHotmart() {
+    var imported = document.createElement("script");
+    imported.src = "https://static.hotmart.com/checkout/widget.min.js";
+    document.head.appendChild(imported);
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = "https://static.hotmart.com/css/hotmart-fb.min.css";
+    document.head.appendChild(link);
+  }
+  importHotmart();
+</script>
+
+<style>
+  .special {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+</style>
