@@ -1,4 +1,5 @@
 ---
+import BuyButton from "@/components/BuyButton.astro";
 import Summary from "@/components/Summary.astro";
 
 export const summariesFirstMonth = [
@@ -40,15 +41,11 @@ export const summariesFirstMonth = [
       },
       {
         label: "CLASE DE YOGA – 1:15",
-        bullets: [
-          "Eliminar tensiones",
-        ],
+        bullets: ["Eliminar tensiones"],
       },
       {
         label: "RELAJACIÓN – 45minutos",
-        bullets: [
-          "Paz interior. Atención plena",
-        ],
+        bullets: ["Paz interior. Atención plena"],
       },
     ],
   },
@@ -57,21 +54,15 @@ export const summariesFirstMonth = [
     content: [
       {
         label: "CLASE GRABADA – 15minutos",
-        bullets: [
-          "Teoría: Las bases de flexibilidad",
-        ],
+        bullets: ["Teoría: Las bases de flexibilidad"],
       },
       {
         label: "CLASE DE YOGA – 1:15",
-        bullets: [
-          "Conecta con tu flexibilidad",
-        ],
+        bullets: ["Conecta con tu flexibilidad"],
       },
       {
         label: "RELAJACIÓN – 45minutos",
-        bullets: [
-          "Suelta y libera toda tensión",
-        ],
+        bullets: ["Suelta y libera toda tensión"],
       },
     ],
   },
@@ -87,15 +78,11 @@ export const summariesFirstMonth = [
       },
       {
         label: "CLASE DE YOGA – 1:15",
-        bullets: [
-          "Para el dolor de espalda",
-        ],
+        bullets: ["Para el dolor de espalda"],
       },
       {
         label: "RELAJACIÓN – 45minutos",
-        bullets: [
-          "Escanea todo tu cuerpo y suelta a través de la respiración",
-        ],
+        bullets: ["Escanea todo tu cuerpo y suelta a través de la respiración"],
       },
     ],
   },
@@ -114,15 +101,11 @@ export const summariesSecondMonth = [
       },
       {
         label: "CLASE DE YOGA – 1:15",
-        bullets: [
-          "Para las mañanas. Comienza el día con energía",
-        ],
+        bullets: ["Para las mañanas. Comienza el día con energía"],
       },
       {
         label: "RELAJACIÓN – 45minutos",
-        bullets: [
-          "Relajación sanadora. Renueva cada célula de tu cuerpo.",
-        ],
+        bullets: ["Relajación sanadora. Renueva cada célula de tu cuerpo."],
       },
     ],
   },
@@ -138,15 +121,11 @@ export const summariesSecondMonth = [
       },
       {
         label: "CLASE DE YOGA – 1:15",
-        bullets: [
-          "Para dormir bien",
-        ],
+        bullets: ["Para dormir bien"],
       },
       {
         label: "RELAJACIÓN – 45minutos",
-        bullets: [
-          "Relax total. Relaja cuerpo, mente y emociones",
-        ],
+        bullets: ["Relax total. Relaja cuerpo, mente y emociones"],
       },
     ],
   },
@@ -155,21 +134,15 @@ export const summariesSecondMonth = [
     content: [
       {
         label: "CLASE GRABADA – 15minutos",
-        bullets: [
-          "Teoría: Clase de Yoga para cuando tenemos poco tiempo 1",
-        ],
+        bullets: ["Teoría: Clase de Yoga para cuando tenemos poco tiempo 1"],
       },
       {
         label: "CLASE DE YOGA – 1:15",
-        bullets: [
-          "Para liberar el estrés y la ansiedad",
-        ],
+        bullets: ["Para liberar el estrés y la ansiedad"],
       },
       {
         label: "RELAJACIÓN – 45minutos",
-        bullets: [
-          "Duerme profundamente sin ansiedad.",
-        ],
+        bullets: ["Duerme profundamente sin ansiedad."],
       },
     ],
   },
@@ -178,95 +151,147 @@ export const summariesSecondMonth = [
     content: [
       {
         label: "CLASE GRABADA – 15minutos",
-        bullets: [
-          "Clase: Clase de Yoga para cuando tenemos poco tiempo 2",
-        ],
+        bullets: ["Clase: Clase de Yoga para cuando tenemos poco tiempo 2"],
       },
       {
         label: "CLASE DE YOGA – 1:15",
-        bullets: [
-          "Para balancear energéticamente",
-        ],
+        bullets: ["Para balancear energéticamente"],
       },
       {
         label: "RELAJACIÓN – 45minutos",
-        bullets: [
-          "Relajación para un sueño y descanso profundo.",
-        ],
+        bullets: ["Relajación para un sueño y descanso profundo."],
       },
     ],
   },
 ];
-
 ---
 
-<section id='schedule' class='w-full py-20 bg-white'>
+<section id='schedule' class='relative py-16'>
   <div class='max-w-7xl mx-auto px-6'>
-    <h2 class='text-4xl md:text-5xl font-bold text-center mb-12'>
+    <h2 class='text-4xl md:text-5xl font-bold text-center mb-12 text-primary'>
       Cronograma del Programa
-    </h2> 
-    <div class='grid md:grid-cols-2 gap-8 lg:gap-12 mb-6'> 
-      <!-- Primeras 4 Clases -->
-    
-      <div class='bg-white p-8 rounded-lg shadow-sm'>
-        <div class='space-y-4'>
-          <!-- Componente Dropdown para cada semana -->
-          {summariesFirstMonth.map(({ title, content }) => (
-          <Summary title={title}>
-            <!-- Aquí generamos la lista con la info de cada semana -->
-            <div class="space-y-4">
-              {content.map(({ label, bullets }) => (
-                <div>
-                  <p class="font-semibold ">{label}</p>
-                  <ul class="list-disc list-inside ml-4 space-y-1">
-                    {bullets.map((item) => (
-                      <li>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </Summary>
-        ))}
-        </div>
+    </h2>
+
+    <div class='grid md:grid-cols-2 gap-8 lg:gap-12 mb-12'>
+      <!-- Primer Mes -->
+      <div class='space-y-4 accordion-group'>
+        <h3 class='text-2xl font-semibold text-primary mb-6'>Primer Mes</h3>
+        {
+          summariesFirstMonth.map(({ title, content }) => (
+            <Summary title={title}>
+              <div class='space-y-6'>
+                {content.map(({ label, bullets }) => (
+                  <div class='space-y-2'>
+                    <h4 class='font-semibold text-primary'>{label}</h4>
+                    <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                      {bullets.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </Summary>
+          ))
+        }
       </div>
 
-      <!-- Últimas 4 Clases -->
-      <div class='bg-white p-8 rounded-lg shadow-sm'>
-        <div class='space-y-4'>
-          {summariesSecondMonth.map(({ title, content }) => (
-          <Summary title={title}>
-            <!-- Aquí generamos la lista con la info de cada semana -->
-            <div class="space-y-4">
-              {content.map(({ label, bullets }) => (
-                <div>
-                  <p class="font-semibold ">{label}</p>
-                  <ul class="list-disc list-inside ml-4 space-y-1">
-                    {bullets.map((item) => (
-                      <li>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </Summary>
-        ))}
-        </div>
+      <!-- Segundo Mes -->
+      <div class='space-y-4 accordion-group'>
+        <h3 class='text-2xl font-semibold text-primary mb-6'>Segundo Mes</h3>
+        {
+          summariesSecondMonth.map(({ title, content }) => (
+            <Summary title={title}>
+              <div class='space-y-6'>
+                {content.map(({ label, bullets }) => (
+                  <div class='space-y-2'>
+                    <h4 class='font-semibold text-primary'>{label}</h4>
+                    <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                      {bullets.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </Summary>
+          ))
+        }
       </div>
     </div>
-    <a href="https://wa.me/34658475845" target="_blank" class=" px-10 text-white py-2 rounded-full bg-rose-400 transition-colors cursor-pointer ">
-      ❓ ¿tenes dudas? Contáctanos
-    </a>      
-    <div class='mt-12 text-center mb-6'>
-      <a
-      onclick='return false;'
-      href='https://pay.hotmart.com/R98635516G?checkoutMode=2'
-      class='hotmart-fb animate-float'
-      ><button
-        class='py-6 lg:px-24 px-16 bg-rose-400 text-white rounded-full hover:bg-rose-500 transition-colors cursor-pointer text-2xl font-bold'
-      >
-        Click Aquí para empezar
-      </button></a >        
-    </div> 
+    <a
+      href='https://wa.me/34658475845'
+      target='_blank'
+      class='px-10 mb-12 text-white py-3 rounded-full bg-primary hover:bg-secondary transition-colors cursor-pointer inline-flex items-center gap-2'
+    >
+      <span>❓</span> ¿Tienes dudas? Contáctanos
+    </a>
+    <div class='text-center flex flex-col items-center gap-6'>
+      <h3 class='text-2xl font-semibold text-primary mb-6'>
+        Introduce la palabra <span class='special'>CUPONVIP</span> y obtén un
+        <span class='special'>20% OFF</span>
+      </h3>
+      <h3 class='text-primary font-bold text-lg'>En la sección de la imagen</h3>
+      <img src='/cupon.png' alt='' class='w-1/2 shadow-lg' />
+      <BuyButton text='Click Aquí para empezar' />
+    </div>
   </div>
 </section>
+
+<script>
+  function setupAccordion() {
+    const accordionGroups = document.querySelectorAll(".accordion-group");
+
+    accordionGroups.forEach((group) => {
+      const dropdowns = group.querySelectorAll(".week-dropdown");
+      let activeDropdown: HTMLElement | null = null;
+
+      dropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector("button");
+        const content = dropdown.querySelector(".content") as HTMLElement;
+
+        if (button && content) {
+          button.addEventListener("click", () => {
+            const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+            // Cerrar el dropdown activo si existe y es diferente al actual
+            if (activeDropdown && activeDropdown !== dropdown) {
+              const activeButton = activeDropdown.querySelector("button");
+              const activeContent = activeDropdown.querySelector(".content");
+
+              if (activeButton && activeContent) {
+                activeButton.setAttribute("aria-expanded", "false");
+                activeContent.classList.remove("expanded");
+              }
+            }
+
+            // Alternar el estado del dropdown actual
+            button.setAttribute("aria-expanded", (!isExpanded).toString());
+            content.classList.toggle("expanded");
+
+            // Actualizar el dropdown activo
+            activeDropdown = isExpanded ? null : (dropdown as HTMLElement);
+          });
+        }
+      });
+    });
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  document.addEventListener("DOMContentLoaded", setupAccordion);
+
+  // Ejecutar cuando Astro haya completado la hidratación
+  document.addEventListener("astro:page-load", setupAccordion);
+</script>
+
+<style>
+  .accordion-group {
+    container-type: inline-size;
+  }
+
+  @container (min-width: 600px) {
+    .week-dropdown button {
+      font-size: 1.1rem;
+    }
+  }
+</style>

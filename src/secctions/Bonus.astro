@@ -1,86 +1,77 @@
-<section
-  id='bonus'
-  class='container mx-auto px-4 flex flex-col items-center justify-center gap-10 w-full py-20'
->
-  <h2
-    class='bg-gradient-to-r from-rose-100 via-rose-500 to-rose-100
-       text-white text-center py-4 text-5xl uppercase w-full font-bold'
-  >
-    Aprovecha los <span class='font-extrabold block lg:inline'>BONUS</span> de lanzamiento
-  </h2>
-  <!-- Contenedor principal: en pantallas pequeñas se apilan; en pantallas medianas y mayores, dos columnas -->
-  <div class='grid grid-cols-1 md:grid-cols-2 gap-8'>
-    <!-- Primer bloque -->
-    <div
-      class='bg-gradient-to-r from-white to-rose-200 shadow-lg rounded-lg p-8 text-center transform transition-transform hover:scale-105 duration-300'
-    >
-      <!-- Aquí colocas tu imagen -->
-      <img
-        src='ruta-de-tu-imagen-1.png'
-        alt='Imagen del Bonus 1'
-        class='mx-auto mb-4 size-40 object-cover rounded-full border-4 border-white'
-      />
-      <!-- Título y texto descriptivo -->
-      <h3 class='text-3xl font-bold mb-2 text-rose-600 underline'>
-        ACCIÓN RAPIDA
-      </h3>
-      <p class='text-rose-600 text-xl'>
-        Las primeras <span class='font-extrabold text-rose-600'>20</span> personas
-        en inscribirse reciben una <span class='font-extrabold text-rose-600'>
-          sesión extra grupal de YOGA NIDRA</span
-        > conmigo
-      </p>
+---
+import BuyButton from "@/components/BuyButton.astro";
+---
+
+<section id='bonus' class='relative py-16'>
+  <div class='max-w-7xl mx-auto px-6'>
+    <h2 class='text-4xl md:text-5xl font-bold text-center mb-12 text-primary'>
+      Introduce la palabra <span class='special'>CUPONVIP</span> y obtén un
+      <span class='special'>20% OFF</span>
+    </h2>
+    <div class='text-center'>
+      <BuyButton text='Unirme a la membresía' />
     </div>
 
-    <!-- Segundo bloque -->
-    <div
-      class='bg-gradient-to-r from-white to-rose-200 shadow-lg rounded-lg p-8 text-center transform transition-transform hover:scale-105 duration-300'
-    >
-      <!-- Aquí colocas tu imagen -->
-      <img
-        src='ruta-de-tu-imagen-2.png'
-        alt='Imagen del Bonus 2'
-        class='mx-auto mb-4 size-40 object-cover rounded-full border-4 border-white'
-      />
-      <!-- Título y texto descriptivo -->
-      <h3 class='text-3xl font-bold mb-2 text-rose-600 underline'>PREMIUM</h3>
-      <p class='text-rose-600 text-xl'>
-        Los inscriptos <span class='font-extrabold text-rose-600'>HOY</span> recibirán
-        <span class='font-extrabold text-rose-600'>2 clases grabadas extra</span
-        > sobre técnicas de respiración avanzadas.
-      </p>
+    <!-- Contenedor principal -->
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12'>
+      {
+        [
+          {
+            imgSrc: "ruta-de-tu-imagen-1.png",
+            title: "ACCIÓN RÁPIDA",
+            description:
+              'Las primeras <span class="font-extrabold text-primary">20</span> personas en inscribirse reciben una <span class="font-extrabold text-primary">sesión extra grupal de YOGA NIDRA</span> conmigo.',
+          },
+          {
+            imgSrc: "ruta-de-tu-imagen-2.png",
+            title: "PREMIUM",
+            description:
+              'Los inscriptos <span class="font-extrabold text-primary">HOY</span> recibirán <span class="font-extrabold text-primary">2 clases grabadas extra</span> sobre técnicas de respiración avanzadas.',
+          },
+        ].map(({ imgSrc, title, description }) => (
+          <div class='relative'>
+            <div class='absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg transform rotate-3' />
+            <div class='relative z-10 bg-white shadow-lg rounded-lg p-8 text-center transform transition-transform hover:scale-105 duration-300'>
+              <img
+                src={imgSrc}
+                alt={`Imagen del ${title}`}
+                class='mx-auto mb-4 size-40 object-cover rounded-full border-4 border-white shadow-lg'
+              />
+              <h3 class='text-3xl font-bold mb-4 text-primary'>{title}</h3>
+              <p class='text-text text-lg' set:html={description} />
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
-  <a
-    onclick='return false;'
-    href='https://pay.hotmart.com/R98635516G?checkoutMode=2'
-    class='hotmart-fb animate-float'
-    ><button
-      class='py-6 lg:px-24 px-16 bg-rose-400 text-white rounded-full hover:bg-rose-500 transition-colors cursor-pointer text-2xl font-bold'
-    >
-      Reserva tu plaza
-    </button></a
-  >
 </section>
-
-<script type='text/javascript'>
-  function importHotmart() {
-    var imported = document.createElement("script");
-    imported.src = "https://static.hotmart.com/checkout/widget.min.js";
-    document.head.appendChild(imported);
-    var link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.type = "text/css";
-    link.href = "https://static.hotmart.com/css/hotmart-fb.min.css";
-    document.head.appendChild(link);
-  }
-  importHotmart();
-</script>
 
 <style>
   .special {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #fedb37 0%,
+        #fdb931 8%,
+        #9f7928 30%,
+        #8a6e2f 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #ffffff 0%,
+        #ffffac 8%,
+        #d1b464 25%,
+        #5d4a1f 62.5%,
+        #5d4a1f 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   }
 </style>

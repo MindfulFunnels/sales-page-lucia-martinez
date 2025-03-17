@@ -1,87 +1,135 @@
-<section id='faq' class='w-full py-20 bg-gray-50'>
-  <div class='max-w-4xl mx-auto px-6'>
-    <h2 class='text-4xl md:text-5xl font-bold text-center mb-12'>
-      Preguntas frecuentes
+---
+// Datos de las preguntas frecuentes
+const faqs = [
+  {
+    question: "¿Necesito experiencia previa en yoga?",
+    answer:
+      "En lo absoluto, clases están adaptadas para todos los niveles. aprenderás las posturas básicas y la respiración correcta, y posteriormente podrás ir avanzando en tus objetivos.",
+  },
+  {
+    question: "¿Qué material necesito para las clases?",
+    answer:
+      "Te recomiendo ropa cómoda, una esterilla de yoga o gimnasio, una toalla pequeña y agua. Lo más importante es la actitud y disposición para aprender.",
+  },
+  {
+    question: "¿Puedo recuperar clases perdidas?",
+    answer:
+      "Sí, las clases serán grabadas y quedarán disponibles en la plataforma de la academia para que puedas verlas en cualquier momento.",
+  },
+  {
+    question: "¿Cuanto tiempo tengo acceso al programa y su contenido?",
+    answer:
+      "El acceso al programa es de 1 año, acceso libre a todas las clases y material dictado en el mismo.",
+  },
+  {
+    question: "¿Que forma de pago tienen?",
+    answer:
+      "El Precio se convierte automaticamente a la moneda de tu país, o puedes pagar en la divisa de tu conveniencia.",
+  },
+];
+---
+
+<section id='faq' class='relative py-16'>
+  <div class='max-w-7xl mx-auto px-6'>
+    <h2 class='text-4xl md:text-5xl font-bold text-center mb-12 text-primary'>
+      Preguntas Frecuentes
     </h2>
 
-    <div class='space-y-6'>
-      <!-- Pregunta 1 -->
-      <div class='bg-gray-50 p-6 rounded-lg'>
-        <h3 class='text-xl font-semibold mb-3'>
-          ¿Necesito experiencia previa en yoga?
-        </h3>
-        <p class='text-gray-700'>
-          En lo absoluto, clases están adaptadas para todos los niveles.
-          aprenderás las posturas básicas y la respiración correcta, y
-          posteriormente podrás ir avanzando en tus objetivos.
-        </p>
-      </div>
+    <div class='space-y-4'>
+      {
+        faqs.map((faq, index) => (
+          <div class='bg-white rounded-lg shadow-sm border border-accent/20 overflow-hidden'>
+            <button
+              class='w-full p-6 text-left flex justify-between items-center gap-4'
+              data-faq-btn={index}
+            >
+              <h3 class='text-xl font-semibold text-primary'>{faq.question}</h3>
+              <svg
+                class='w-6 h-6 text-primary transform transition-transform duration-300'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+                data-faq-icon={index}
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M19 9l-7 7-7-7'
+                />
+              </svg>
+            </button>
+            <div
+              class='max-h-0 overflow-hidden transition-all duration-300 ease-in-out'
+              data-faq-content={index}
+            >
+              <p class='text-text p-6 pt-0'>{faq.answer}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
 
-      <!-- Pregunta 2 -->
-      <div class='bg-gray-50 p-6 rounded-lg'>
-        <h3 class='text-xl font-semibold mb-3'>
-          ¿Qué material necesito para las clases?
-        </h3>
-        <p class='text-gray-700'>
-          Te recomiendo ropa cómoda, una esterilla de yoga o gimnasio, una
-          toalla pequeña, una manta y agua. Lo más importante es la actitud y disposición
-          para aprender.
-        </p>
-      </div>
-
-      <!-- Pregunta 3 -->
-      <div class='bg-gray-50 p-6 rounded-lg'>
-        <h3 class='text-xl font-semibold mb-3'>
-          ¿Puedo recuperar clases perdidas?
-        </h3>
-        <p class='text-gray-700'>
-          Sí, las clases serán grabadas y quedarán disponibles en la plataforma
-          de la academia para que puedas verlas en cualquier momento.
-        </p>
-      </div>
-
-      <!-- Pregunta 4 -->
-      <div class='bg-gray-50 p-6 rounded-lg'>
-        <h3 class='text-xl font-semibold mb-3'>
-          ¿Con qué frecuencia debo practicar yoga?
-        </h3>
-        <p class='text-gray-700'>
-          Para ver resultados, recomendamos practicar al menos 2-3 veces por
-          semana. Sin embargo, cada persona es diferente y puedes adaptar la
-          frecuencia según tu disponibilidad y objetivos.
-        </p>
-      </div>
-      <!-- Pregunta 4 -->
-      <div class='bg-gray-50 p-6 rounded-lg'>
-        <h3 class='text-xl font-semibold mb-3'>
-          ¿Cuanto tiempo tengo acceso al programa y su contenido?
-        </h3>
-        <p class='text-gray-700'>
-          El acceso al programa es de 1 año, acceso libre a todas las clases y
-          material dictado en el mismo.
-        </p>
-      </div>
-
-      <div class='bg-gray-50 p-6 rounded-lg'>
-        <h3 class='text-xl font-semibold mb-3'>¿Que forma de pago tienen?</h3>
-        <p class='text-gray-700'>
-          El Precio se convierte automaticamente a la moneda de tu país, o
-          puedes pagar en la divisa de tu conveniencia.
-        </p>
-      </div>
-
-      <div class='mt-12 text-center'>
-        <p class='text-gray-600 mb-6'>
-          ¿Tienes más preguntas? No dudes en contactarnos
-        </p>
-        <a href='https://wa.me/34658475845' target='_blank'>
-          <button
-            class='px-8 py-3 bg-rose-400 text-white rounded-full hover:bg-rose-500 transition-colors cursor-pointer'
-          >
-            Hacer una pregunta
-          </button>
-        </a>
-      </div>
+    <div class='mt-6 text-center'>
+      <p class='text-text mb-6'>
+        ¿Tienes más preguntas? No dudes en contactarnos
+      </p>
+      <a
+        href='https://wa.me/34658475845'
+        target='_blank'
+        class='inline-block py-3 px-8 bg-primary text-white rounded-full hover:bg-secondary transition-colors'
+      >
+        Contactar
+      </a>
     </div>
   </div>
 </section>
+
+<script>
+  function setupFAQs() {
+    const faqButtons = document.querySelectorAll("[data-faq-btn]");
+
+    faqButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const index = button.getAttribute("data-faq-btn");
+        const content = document.querySelector(
+          `[data-faq-content="${index}"]`
+        ) as HTMLElement;
+        const icon = document.querySelector(`[data-faq-icon="${index}"]`);
+
+        // Cerrar todos los otros FAQs
+        document.querySelectorAll("[data-faq-content]").forEach((el) => {
+          if (el !== content) {
+            (el as HTMLElement).style.maxHeight = "0px";
+          }
+        });
+
+        document.querySelectorAll("[data-faq-icon]").forEach((el) => {
+          if (el !== icon) {
+            el.classList.remove("rotate-180");
+          }
+        });
+
+        // Alternar el FAQ actual
+        if (content) {
+          if (content.style.maxHeight === "0px" || !content.style.maxHeight) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon?.classList.add("rotate-180");
+          } else {
+            content.style.maxHeight = "0px";
+            icon?.classList.remove("rotate-180");
+          }
+        }
+      });
+    });
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  document.addEventListener("DOMContentLoaded", setupFAQs);
+</script>
+
+<style>
+  [data-faq-content] {
+    max-height: 0px;
+  }
+</style>

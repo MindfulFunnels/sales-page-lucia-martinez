@@ -1,0 +1,113 @@
+<section id='plan' class='w-full py-16'>
+  <div class='max-w-7xl mx-auto px-6'>
+    <h2
+      class='double-letter text-4xl md:text-5xl font-extrabold text-center mb-12 leading-tight text-primary'
+    >
+      Libera <span class='text-primary'>tensiones físicas</span>,
+      <span class='text-primary'>estrés</span>,
+      <span class='text-primary'>recarga el cuerpo</span> y ten un
+      <span class='text-primary'>sueño reparador</span>
+      <span class='text-text'>con mi programa</span>
+    </h2>
+
+    <div class='flex justify-center items-center text-center mb-12'>
+      <h1
+        class='font-extrabold text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary'
+      >
+        Cuídate Ahora
+      </h1>
+    </div>
+    <div class='grid md:grid-cols-1 lg:grid-cols-2 gap-8 mb-6'>
+      <!-- Beneficios -->
+      <div class='bg-white p-8 rounded-lg shadow-sm border border-accent/20'>
+        <h3 class='text-2xl font-semibold mb-4 text-primary'>
+          Beneficios del curso
+        </h3>
+        <ul class='space-y-3'>
+          {
+            [
+              "Mejora tu flexibilidad y fuerza",
+              "Reduce el estrés y la ansiedad",
+              "Mejora tu postura y equilibrio",
+              "Recarga el cuerpo y la mente",
+              "Mejora tu sueño",
+              "Aumenta tu energía y vitalidad",
+              "Fortalece tu sistema inmunológico",
+            ].map((benefit) => (
+              <li class='flex items-start gap-2'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  class='h-6 w-6 text-secondary flex-shrink-0'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M5 13l4 4L19 7'
+                  />
+                </svg>
+                <span class='text-text'>{benefit}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Qué incluye -->
+      <div class='bg-white p-8 rounded-lg shadow-sm border border-accent/20'>
+        <h3 class='text-2xl font-semibold mb-4 text-primary'>Qué incluye</h3>
+        <ul class='space-y-3'>
+          {
+            [
+              "16 clases en vivo (2 sesiones semanales)",
+              "Material de apoyo digital",
+              "Comunidad de apoyo",
+              "Se tendrá acceso al curso durante 1 año. Pueden disfrutar de las sesiones tantas veces quieran",
+            ].map((item) => (
+              <li class='flex items-start gap-2'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  class='h-6 w-6 text-secondary flex-shrink-0'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+                  />
+                </svg>
+                <span class='text-text'>{item}</span>
+              </li>
+            ))
+          }
+          <a href='#schedule'>
+            <button
+              class='w-full py-3 px-6 bg-primary text-white rounded-full hover:bg-secondary transition-colors cursor-pointer'
+            >
+              Chequea el cronograma
+            </button>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <a
+      href='https://wa.me/34658475845'
+      target='_blank'
+      class='px-10 text-white py-2 rounded-full bg-primary hover:bg-secondary transition-colors cursor-pointer'
+    >
+      ❓ ¿tenes dudas? Contáctanos
+    </a>
+  </div>
+</section>
+
+<style>
+  .double-letter {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  }
+</style>

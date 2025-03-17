@@ -1,127 +1,69 @@
-<nav class='w-full bg-white shadow-lg fixed top-0 z-50'>
-  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-    <div class='flex justify-between h-20'>
-      <div class='flex items-center'>
-        <!-- <a href='/'>
-          <img class='h-12 w-auto' src='/logo.png' alt='Logo' />
-        </a> -->
-        <h1 class='title text-rose-500'>Lucía Martínez Bienestar</h1>
+---
+// Definimos las clases reutilizables
+const linkClasses = "text-text hover:text-primary transition-colors";
+const mobileLinkClasses =
+  "block px-3 py-2 text-text hover:text-primary rounded-md";
+---
+
+<nav
+  class='fixed w-full z-50 bg-background/80 backdrop-blur-sm border-b border-primary/10'
+>
+  <div class='max-w-7xl mx-auto px-4'>
+    <div class='flex justify-between items-center h-16'>
+      <!-- Logo -->
+      <!-- <a
+        href='#inicio'
+        class='text-xl font-bold text-primary'
+        style='font-family: poppins;'>Lucía Martínez Bienestar</a
+      > -->
+
+      <a href='/'>
+        <img src='/logo.png' alt='Logo' class='size-12' />
+      </a>
+
+      <!-- Enlaces de navegación -->
+      <div class='hidden md:flex space-x-8'>
+        <a href='#inicio' class={linkClasses}>Inicio</a>
+        <a href='#plan' class={linkClasses}>Plan</a>
+        <a href='#bonus' class={linkClasses}>Bonus</a>
+        <a href='#testimonials' class={linkClasses}>Testimonios</a>
+        <a href='#schedule' class={linkClasses}>Cronograma</a>
+        <a href='#faq' class={linkClasses}>FAQ</a>
+        <a href='#about' class={linkClasses}>Sobre mi</a>
       </div>
 
-      <!-- Menú para pantallas grandes -->
-      <div class='hidden lg:flex items-center space-x-8'>
-        <a
-          href='#inicio'
-          class='text-gray-700 hover:text-rose-500 font-medium text-lg transition-colors'
+      <!-- Botón móvil -->
+      <button class='md:hidden text-text hover:text-primary' id='menuBtn'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='h-6 w-6'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke='currentColor'
         >
-          Inicio
-        </a>
-        <a
-          href='#pricing'
-          class='text-gray-700 hover:text-rose-500 font-medium text-lg transition-colors'
-        >
-          Plan
-        </a>
-        <a
-          href='#bonus'
-          class='text-gray-700 hover:text-rose-500 font-medium text-lg transition-colors'
-        >
-          Bonus
-        </a>
-        <a
-          href='#testimonials'
-          class='text-gray-700 hover:text-rose-500 font-medium text-lg transition-colors'
-        >
-          Testimonios
-        </a>
-        <a
-          href='#schedule'
-          class='text-gray-700 hover:text-rose-500 font-medium text-lg transition-colors'
-        >
-          Cronograma
-        </a>
-        <a
-          href='#faq'
-          class='text-gray-700 hover:text-rose-500 font-medium text-lg transition-colors'
-        >
-          FAQ
-        </a>
-        <a
-          href='#about'
-          class='text-gray-700 hover:text-rose-500 font-medium text-lg transition-colors'
-        >
-          Sobre mí
-        </a>
-      </div>
-
-      <!-- Botón hamburguesa para móvil -->
-      <div class='lg:hidden flex items-center'>
-        <button
-          id='menuBtn'
-          class='text-gray-700 hover:text-rose-500 focus:outline-none'
-        >
-          <svg
-            class='h-8 w-8'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='currentColor'
-          >
-            <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='2'
-              d='M4 6h16M4 12h16M4 18h16'></path>
-          </svg>
-        </button>
-      </div>
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M4 6h16M4 12h16M4 18h16'></path>
+        </svg>
+      </button>
     </div>
+  </div>
 
-    <!-- Menú móvil -->
-    <div id='mobileMenu' class='hidden lg:hidden'>
-      <div class='px-2 pt-2 pb-3 space-y-1'>
-        <a
-          href='#inicio'
-          class='nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-500 rounded-md'
-        >
-          Inicio
-        </a>
-        <a
-          href='#pricing'
-          class='nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-500 rounded-md'
-        >
-          Plan
-        </a>
-        <a
-          href='#bonus'
-          class='nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-500 rounded-md'
-        >
-          Bonus
-        </a>
-        <a
-          href='#testimonials'
-          class='nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-500 rounded-md'
-        >
-          Testimonios
-        </a>
-        <a
-          href='#schedule'
-          class='nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-500 rounded-md'
-        >
-          Cronograma
-        </a>
-        <a
-          href='#faq'
-          class='nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-500 rounded-md'
-        >
-          FAQ
-        </a>
-        <a
-          href='#about'
-          class='nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-500 rounded-md'
-        >
-          Sobre mí
-        </a>
-      </div>
+  <!-- Menú móvil -->
+  <div
+    class='hidden md:hidden bg-background/95 backdrop-blur-sm w-full absolute'
+    id='mobileMenu'
+  >
+    <div class='px-2 pt-2 pb-3 space-y-1'>
+      <a href='#inicio' class={mobileLinkClasses}>Inicio</a>
+      <a href='#plan' class={mobileLinkClasses}>Plan</a>
+      <a href='#bonus' class={mobileLinkClasses}>Bonus</a>
+      <a href='#testimonials' class={mobileLinkClasses}>Testimonios</a>
+      <a href='#schedule' class={mobileLinkClasses}>Cronograma</a>
+      <a href='#faq' class={mobileLinkClasses}>FAQ</a>
+      <a href='#about' class={mobileLinkClasses}>Sobre mi</a>
     </div>
   </div>
 </nav>
@@ -129,17 +71,10 @@
 <script>
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-  let navLinks = document.querySelectorAll(".nav-link");
 
   menuBtn?.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevenir que el clic se propague al document
+    e.stopPropagation();
     mobileMenu?.classList.toggle("hidden");
-  });
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
-    });
   });
 
   // Cierra el menú al hacer clic fuera de él
@@ -153,41 +88,11 @@
     }
   });
 
-  // Selecciona todos los enlaces que apuntan a secciones (href que empieza con "#")
-  navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-  // Opciones para el observer: el umbral se puede ajustar según el efecto deseado.
-  const observerOptions = {
-    root: null,
-    threshold: 0,
-    rootMargin: "-50% 0px -50% 0px",
-  };
-
-  // Función que actualiza la clase de los enlaces según la visibilidad de la sección.
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const id = entry.target.getAttribute("id");
-      if (id) {
-        // Selecciona todos los enlaces que corresponden a la sección actual.
-        const matchingLinks = document.querySelectorAll(`nav a[href="#${id}"]`);
-        if (entry.isIntersecting) {
-          matchingLinks.forEach((link) => {
-            link.classList.remove("text-gray-700");
-            link.classList.add("text-rose-500");
-          });
-        } else {
-          matchingLinks.forEach((link) => {
-            link.classList.remove("text-rose-500");
-            link.classList.add("text-gray-700");
-          });
-        }
-      }
+  // Cierra el menú al hacer clic en un enlace
+  document.querySelectorAll("#mobileMenu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
     });
-  }, observerOptions);
-
-  // Observa cada sección que tenga un id.
-  document.querySelectorAll("section[id]").forEach((section) => {
-    observer.observe(section);
   });
 </script>
 

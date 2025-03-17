@@ -1,10 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #C66271; 
-  --color-secondary: #7A5C3C;
-  --color-background: #F2F2F2;
+  --color-primary: #4A6741;    /* Verde oscuro para elementos principales */
+  --color-secondary: #798C6E;  /* Verde medio para elementos secundarios */
+  --color-accent: #E1D4C7;     /* Beige claro para acentos */
+  --color-background: #F5F1ED; /* Beige muy claro para fondos */
+  --color-text: #2C3E2D;       /* Verde muy oscuro para texto */
+  --color-light: #B7C4B1;      /* Verde claro para elementos sutiles */
 }
+
+/* Clases de utilidad para usar las variables */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-background { background-color: var(--color-background); }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+.border-accent { border-color: var(--color-accent); }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
@@ -19,13 +34,12 @@
   }
 }
 
-
 .animate-typewriter {
   font-family: monospace;             /* Asegura que cada carácter ocupa el mismo ancho */
   display: inline-block;              /* Permite animar el ancho */
   white-space: nowrap;                /* Evita que el texto se envuelva */
   overflow: hidden;                   /* Oculta el contenido que excede el ancho animado */
-  border-right: .10em solid rgb(54, 54, 54);   /* Simula el cursor de la máquina de escribir */
+  border-right: .10em solid var(--color-text);   /* Simula el cursor de la máquina de escribir */
   animation: 
     typing 4s steps(34, end) forwards,  /* Ajusta 34 al número total de caracteres */
     blink-caret .75s step-end infinite;
@@ -40,7 +54,7 @@
 /* Animación del cursor parpadeante */
 @keyframes blink-caret {
   from, to { border-color: transparent; }
-  50% { border-color: rgb(192, 192, 192); }
+  50% { border-color: var(--color-text); }
 }
 
 

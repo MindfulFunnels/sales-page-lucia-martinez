@@ -1,70 +1,137 @@
-<section
-  id='pricing'
-  class='w-full py-20 bg-gray-50 items-center flex flex-col'
->
-  <div
-    class='max-w-7xl mx-auto px-6 text-center items-center flex flex-col gap-6'
-  >
-    <!-- Precio y CTA -->
+---
+import BuyButton from "@/components/BuyButton.astro";
+---
 
-    <h3
-      class='special text-5xl font-bold mb-4 flex flex-row items-center justify-center gap-2'
-    >
-      <img src='/alert.gif' alt='' class='size-12' />Precio especial<img
-        src='/alert.gif'
-        alt=''
-        class='size-12'
-      />
-    </h3>
-    <div class='flex gap-2 text-center justify-center items-center'>
-      <p class='lg:text-9xl text-7xl font-bold text-rose-500 mb-2'>127€</p>
-      <p
-        class='text-gray-500 font-bold lg:text-7xl text-5xl line-through rotate-12'
-      >
-        187€
-      </p>
+<section id='stack' class='relative py-16'>
+  <!-- Fondo decorativo -->
+  <div
+    class='w-full max-w-7xl mx-auto px-6 text-center items-center flex flex-col gap-8 relative'
+  >
+    <div class='flex flex-col justify-center items-center gap-6 w-full'>
+      <!-- Título con decoración -->
+      <div class='flex flex-col gap-6 w-full'>
+        <div class='relative'>
+          <span
+            class='absolute -top-6 left-1/2 -translate-x-1/2 text-sm font-bold text-emerald-500 bg-emerald-500/10 px-4 py-1 rounded-full'
+          >
+            ¡ÚLTIMA OPORTUNIDAD!
+          </span>
+          <h3
+            class='mt-12 title text-6xl font-bold flex flex-row items-center justify-center gap-2 text-primary'
+          >
+            <img src='/alert.gif' alt='' class='size-12 md:size-14' />
+            ¡Oferta Especial!
+            <img src='/alert.gif' alt='' class='size-12 md:size-14' />
+          </h3>
+        </div>
+
+        <!-- Contenedor de precios con más efectos -->
+        <div
+          class='w-full bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-3xl p-8 md:p-10 shadow-2xl border border-yellow-200/20 backdrop-blur-sm hover:shadow-yellow-500/10 hover:border-yellow-300/30 transition-all duration-300'
+        >
+          <div
+            class='flex flex-col md:flex-row gap-6 items-center justify-center'
+          >
+            <div class='flex items-center relative'>
+              <!-- Etiqueta de precio anterior -->
+              <div class='relative'>
+                <p
+                  class='text-text/50 font-bold text-4xl md:text-5xl line-through rotate-[-12deg] mr-4'
+                >
+                  187€
+                </p>
+                <span
+                  class='absolute -top-3 right-0 text-xs font-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-full'
+                >
+                  ANTES
+                </span>
+              </div>
+
+              <!-- Precio actual con efectos -->
+              <div class='flex flex-col items-start'>
+                <div class='flex items-center gap-2'>
+                  <span
+                    class='text-sm font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full animate-pulse'
+                  >
+                    AHORRA 60€
+                  </span>
+                  <span class='text-sm text-yellow-600'>20% OFF</span>
+                </div>
+                <p
+                  class='special text-8xl font-bold hover:scale-105 transition-transform'
+                >
+                  127€
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class='mt-8 space-y-3'>
+            <p
+              class='text-text text-lg font-bold animate-bounce bg-emerald-500/10 inline-block px-6 py-2 rounded-full shadow-lg'
+            >
+              ¡Solo quedan pocas plazas disponibles!
+            </p>
+            <p class='text-lg text-text/80 font-medium'>
+              Oferta válida hasta el viernes 21 de marzo
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <p class='text-gray-600 mb-3 text-2xl font-bold animate-bounce underline'>
-        ¡Plazas limitadas!
-      </p>
-      <p class='mb-3 text-2xl text-black underline p-2'>
-        Oferta válida hasta el jueves 27 de marzo
-      </p>
-    </div>
-    <a
-      onclick='return false;'
-      href='https://pay.hotmart.com/R98635516G?checkoutMode=2'
-      class='hotmart-fb animate-float'
-      ><button
-        class='py-6 lg:px-24 px-16 bg-rose-400 text-white rounded-full hover:bg-rose-500 transition-colors cursor-pointer text-2xl font-bold'
-      >
-        Reserva tu plaza
-      </button></a
-    >
-    <div>
-      <img src='/stack.png' alt='' class='' />
-    </div>
+    <!-- Botón con más espacio -->
+    <!-- <div class='mt-4'>
+      <BuyButton />
+    </div> -->
+
+    <!-- Imagen con sombra y bordes -->
+    <!-- <div class='mt-12 relative'>
+      <img src='/stack.png' alt='' class='max-w-full rounded-xl' />
+    </div> -->
   </div>
 </section>
-<script type='text/javascript'>
-  function importHotmart() {
-    var imported = document.createElement("script");
-    imported.src = "https://static.hotmart.com/checkout/widget.min.js";
-    document.head.appendChild(imported);
-    var link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.type = "text/css";
-    link.href = "https://static.hotmart.com/css/hotmart-fb.min.css";
-    document.head.appendChild(link);
-  }
-  importHotmart();
-</script>
 
 <style>
   .special {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #fedb37 0%,
+        #fdb931 8%,
+        #9f7928 30%,
+        #8a6e2f 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #ffffff 0%,
+        #ffffac 8%,
+        #d1b464 25%,
+        #5d4a1f 62.5%,
+        #5d4a1f 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .title {
+    animation: float 3s ease-in-out infinite;
   }
 </style>
